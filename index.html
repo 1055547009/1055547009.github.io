@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
+  
   <style>
   #logo{
     border-radius: 10px 20px 40px 80px;
     
   }
   </style>
+  <link rel="stylesheet" href="data.json">
+  <script src="jquery-3.4.1.js"></script>
 </head>
 <body>
-  <h1>我叫陈文皓</h1>
-  <p>我的学号是<span id="studentnumber">07</span>
-  </p>
+  <h1>我叫<span id="myname"></span></h1>
+  <p>我的学号是<span id="mynumber"></span></p>
 <img id="logo" src="matrix.png">
+<img src="Lighthouse.jpg">
+<script>
+$(function(){
+  $.get("./data.json",function(result){
+    $("#myname").text(result.myname);
+    $("#mynumber").text(result.mynumber);
+  })
+})
 
-  <img src="Lighthouse.jpg" >
-  
+</script>
 </body>
 </html>
