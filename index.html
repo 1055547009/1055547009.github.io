@@ -9,10 +9,12 @@
   }
   </style>
   <link rel="stylesheet" href="data.json">
+  <link rel="stylesheet" href="data1.json">
   <script src="jquery-3.4.1.js"></script>
 </head>
 <body>
   <h1>我叫<span id="myname"></span></h1>
+  <input type="button"  value="下一个" id="bt1">
   <p>我的学号是<span id="mynumber"></span></p>
 <img id="logo" src="matrix.png">
 <img src="Lighthouse.jpg">
@@ -24,6 +26,14 @@ $(function(){
   })
 })
 
+$(function(){
+  $("#bt1").click(function(){
+    $.get("./data1.json",function(result){
+    $("#myname").text(result.myname);
+    $("#mynumber").text(result.mynumber);
+  })
+  })
+})
 </script>
 </body>
 </html>
